@@ -20,6 +20,7 @@ namespace Abschlussübung_Nechwatal
             Art = art;
             Eigenschaft = eigenschaften;
         }
+
         public int Eigenschaft
         {
             get { return eigenschaften; }
@@ -27,7 +28,7 @@ namespace Abschlussübung_Nechwatal
             {
                 if(value > 5)
                     throw new InsektException("Diese Nummer ist zu hoch!")
-                eigenschaften = value;
+                int eigenschaften = value;
             }
         }
         public bool Essbar(int eigenschaften)
