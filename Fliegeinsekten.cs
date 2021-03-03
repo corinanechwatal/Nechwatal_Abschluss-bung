@@ -15,7 +15,6 @@ namespace Abschlussübung_Nechwatal
             Name = name;
             Eigenschaft = eigenschaften;
             Art = art;
-
         }
         public override string ToString()
         {
