@@ -5,13 +5,13 @@ using System.Net;
 
 namespace Abschlussübung_Nechwatal
 {
-    public abstract class Insekt
+    public class Insekt
     {
         public string Name { get; set; }
         public virtual string Art { get; set; }
         private int eigenschaften;
-        public abstract bool IstGefährlich { get; protected set; }
-        public abstract bool KannFliegen { get;protected set; }
+        public virtual bool IstGefährlich { get; protected set; }
+        public virtual bool KannFliegen { get;protected set; }
 
 
         public Insekt(string name, string art, int eigenschaften)
@@ -26,12 +26,12 @@ namespace Abschlussübung_Nechwatal
             get { return eigenschaften; }
             set
             {
-                if(value > 5)
-                    throw new InsektException("Diese Nummer ist zu hoch!")
+                if (value > 5)
+                    throw new InsektException("Diese Nummer ist zu hoch!");
                 int eigenschaften = value;
             }
         }
-        public bool Essbar(int eigenschaften)
+        public bool Essbar()
         {
             if (eigenschaften == 1)
                 return true;
@@ -42,7 +42,7 @@ namespace Abschlussübung_Nechwatal
 
         public override string ToString()
         {
-            return "Name: " + Name + " Art: " + Art + "Eigenschaften: " + Eigenschaften;
+            return "Name: " + Name + " Art: " + Art + "Eigenschaften: " + Eigenschaft;
         }
 
 
