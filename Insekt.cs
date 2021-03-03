@@ -9,17 +9,27 @@ namespace Abschlussübung_Nechwatal
     {
         public string Name { get; set; }
         public virtual string Art { get; set; }
-        public virtual int  Eigenschaften { get; set; }
+        private int eigenschaften;
         public abstract bool IstGefährlich { get; protected set; }
         public abstract bool KannFliegen { get;protected set; }
 
-        protected Insekt(string name, string art, int eigenschaften)
+
+        public Insekt(string name, string art, int eigenschaften)
         {
             Name = name;
             Art = art;
-            Eigenschaften = eigenschaften;
+            Eigenschaft = eigenschaften;
         }
-
+        public int Eigenschaft
+        {
+            get { return eigenschaften; }
+            set
+            {
+                if(value > 5)
+                    throw new InsektException("Diese Nummer ist zu hoch!")
+                eigenschaften = value;
+            }
+        }
         public bool Essbar(int eigenschaften)
         {
             if (eigenschaften == 1)

@@ -6,8 +6,8 @@ namespace Abschlussübung_Nechwatal
 {
     public sealed class Krabbeltiere : Insekt
     {
-        public override bool IstGefährlich { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
-        public override bool KannFliegen { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
+        public override bool IstGefährlich { get { return false; } }
+        public override bool KannFliegen { get { return false; } }
 
         public Krabbeltiere(string art, bool kannFliegen, string name, int eigenschaften):base(name, art, eigenschaften)
         {
