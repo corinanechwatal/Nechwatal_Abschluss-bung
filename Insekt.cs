@@ -21,6 +21,7 @@ namespace Abschlussübung_Nechwatal
             Eigenschaft = eigenschaften;
         }
 
+
         public int Eigenschaft
         {
             get { return eigenschaften; }
